@@ -1,7 +1,6 @@
 import unittest
 import sqlite3
-# from top3_products import top3_products
-
+from DE_CHALLENGE.src.de_challenge.top3_products import top3_products
 
 
 class ProjectTest(unittest.TestCase):
@@ -36,7 +35,6 @@ class ProjectTest(unittest.TestCase):
         self.assertEqual(0, count, "Table should always have ratings between 0.0 to 5.0")
 
         conn.close()
-
 
     def test_find_top_products(self):
         top_products_out = top3_products()
