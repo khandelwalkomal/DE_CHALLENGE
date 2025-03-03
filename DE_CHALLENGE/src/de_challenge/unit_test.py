@@ -1,6 +1,6 @@
 import unittest
 import sqlite3
-from DE_CHALLENGE.src.de_challenge.top3_products import top3_products
+from top3_products import top3_products
 
 
 class ProjectTest(unittest.TestCase):
@@ -25,12 +25,10 @@ class ProjectTest(unittest.TestCase):
         conn.close()
 
     def test_compute_aggregates_values(self):
-        # compute_monthly_aggregates()
-
         # Ensure that aggregates are computed
         conn = sqlite3.connect('product_ratings.db')
         c = conn.cursor()
-        c.execute('SELECT COUNT(*) FROM ratingMonthlyAggregates where average_rating <0.0 or average_rating >5.0')
+        c.execute('SELECT COUNT(*) FROM ratingMonthlyAggregates where AVG_RATING <0.0 or AVG_RATING >5.0')
         count = c.fetchone()[0]
         self.assertEqual(0, count, "Table should always have ratings between 0.0 to 5.0")
 
