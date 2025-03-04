@@ -7,7 +7,7 @@ def mnthly_aggregate_rating():
     # initialise a cursor
     c = conn.cursor()
 
-    #rounding off avg to 2 digits after decimal
+    # rounding off avg to 2 digits after decimal
     c.execute('''CREATE TABLE IF NOT EXISTS ratingMonthlyAggregates AS
                  SELECT DISTINCT
                  PRODUCT_ID, 
