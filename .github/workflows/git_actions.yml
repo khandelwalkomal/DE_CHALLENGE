@@ -22,4 +22,4 @@ jobs:
           cd DE_CHALLENGE/src/de_challenge
           poetry run python create_data.py
           poetry run python mnthly_aggregates.py
-          poetry run python -m unittest unit_tests.py
+          poetry run python unit_tests.py
